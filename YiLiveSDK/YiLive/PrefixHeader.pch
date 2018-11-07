@@ -1,0 +1,50 @@
+//
+//  PrefixHeader.pch
+//  YiLive
+//
+//  Created by Zhenglj on 2018/10/17.
+//  Copyright © 2018年 郑吕杰. All rights reserved.
+//
+
+//PrefixHeader可以导入你所需要的第三方框架的头文件,一次输入整个项目不需要再#import,可以存放你整个项目都需要的全局的自定义的宏
+
+
+#import <Availability.h>
+#import "AppDelegate.h"
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#endif
+
+#ifdef __OBJC__ // 这个宏定义的作用是保证只有OC文件可以调用pch里面的头文件
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#define WeakSelf __weak typeof(self) weakSelf = self   //弱引用
+#define StrongSelf __srtong typeof(self) weakSelf = self //强引用
+
+/*
+ *  控制头文件添加数量保证编译速度
+ */
+
+//全局宏
+#import "Macro.h"
+//第三方框架
+#import <MJRefresh/MJRefresh.h>
+#import <MBProgressHUD.h>
+#import <AFNetworking.h>
+//本地框架
+#import <CoreData/CoreData.h>
+#import "ControlFactory.h"
+#import "UIButtonEdgelnesets.h"
+#import "MJView.h"
+//支付宝
+#import <AlipaySDK/AlipaySDK.h>
+//微信
+#import "WXApi.h"
+
+
+
+#endif
+
+
